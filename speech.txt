@@ -1,0 +1,61 @@
+Hey guys! Welcome back to another Project Video. Today, I’m super excited to show you this amazing Loan Calculator build using HTML CSS and javascript only. Lets go for the Demo first and then talk about it.
+
+I hope you liked the demo!
+
+It’s a simple one, perfect for beginners.
+
+Let me show you how to set it up in your pc. Firstly copy the GitHub link from the description and open the terminal. I hope you have the git installed in your pc. On terminal go the desired project location where you want to place this project. Now type git clone and then paste the link you copied and press enter. After this you will notice that a new older will be crerated just like in the video. Now open that folder and you will find 3 files in it. Index.html, style.css, script.js. Open the index.html file with the browser. And here you go you will it completely up and running. Give it a try and if you face any error drop them in comments.
+
+Now, let’s move towards the code!
+The code structure mainly consists of Three files:
+
+The HTML file named index.html
+The CSS file named style.css
+The JavaScript file named script.js
+It’s a simple structure, but as you advance and learn more, this structure will become more and more complex.
+
+
+
+So, let’s begin with the HTML file.
+This HTML code creates a loan calculator that calculates the monthly payment based on user input. The document is in HTML5, with the language set to English. In the head section, the character encoding is set to UTF-8 to ensure proper text display. The viewport meta tag ensures the page is responsive, adapting to different screen sizes. The title of the page is set to "Loan Calculator," and a link to an external CSS file named `style.css` is included for styling.
+
+The body contains a container div that wraps all the elements. Inside it, an `h1` heading displays "Loan Calculator." A form with the `id="loan-form"` contains input fields for the loan amount, interest rate, and months to pay. The form uses the `oninput` attribute to call a JavaScript function named `calculateLoan()` every time a user modifies the input values. This allows real-time calculation of the loan without the need for a submit button.
+
+The first input field is for the loan amount, with a minimum value of 1, a maximum of 500,000, and a default value of 10,000. The second input field captures the interest rate, allowing values from 0 to 100 with a step of 0.1 to accommodate decimal values. The third input field is for the loan term in months, ranging from 6 to 48, with a default value of 12.
+
+Below the form, a paragraph element with the `id="payment"` is used to display the calculated monthly payment. Initially, it shows "$0.00." At the end of the document, a `<script>` tag loads an external JavaScript file named `script.js`, which contains the logic for calculating and displaying the loan payment.
+
+
+
+
+Now, let’s move forward to the CSS file.
+This CSS code styles a loan calculator web page, providing a clean and responsive design. The body has no margin or padding, ensuring that elements can align precisely. It uses flexbox for layout, centering the `.container` both vertically and horizontally on the viewport, with a light grayish-blue background color using `#f5f7fa`. The font used throughout the page is `Inter`, which is a clean sans-serif font.
+
+The `.container` serves as the main content box. It has a gradient background transitioning from teal `#007b83` to light blue `#00b4d8`, creating a visually appealing effect. White text contrasts well against the gradient background. The container also has padding of `40px`, rounded corners with a `border-radius` of `16px`, and a subtle shadow using `box-shadow` to give a slight floating effect.
+
+The `h1` heading is styled with a larger font size of `32px` and margin spacing of `24px` at the bottom to separate it from the form inputs. Each `label` is block-level and is separated using a margin-top of `16px` for a clean, readable layout. Labels are also styled with a slightly bold font using `font-weight: 500`.
+
+The input fields have the class `.input` and are styled with a width calculation of `calc(100% - 12px)` to ensure they fit within the container while maintaining some internal spacing. They use a font size of `18px` and a padding of `10px`, providing a comfortable input area. The border is semi-transparent white using `rgba(255, 255, 255, 0.4)` for a subtle effect. The background of the inputs is slightly transparent using `rgba(255, 255, 255, 0.1)`, maintaining the gradient aesthetic while ensuring readability. Input text is white for contrast.
+
+When the input fields are focused, their border color changes to `#00b4d8`, and the background becomes slightly more opaque with `rgba(255, 255, 255, 0.2)`, providing clear feedback to the user.
+
+The `.payment` class is used for displaying the calculated loan payment. It has a margin-top of `24px`, a bold font weight of `600`, and a font size of `20px`, making it stand out as important information.
+
+For smaller screens, a media query is applied using `@media (max-width: 480px)`. It reduces the container’s padding to `20px` and the heading’s font size to `24px`, ensuring a better fit for smaller devices. The design remains clean and functional across different screen sizes.
+
+
+
+Now, the final and most important part—JavaScript! 
+This JavaScript code is used to calculate the monthly loan payment based on the loan amount, interest rate, and repayment period in months. It also includes functions to handle errors, reset the form to its default state, and display the result.
+
+The `calculateLoan()` function starts by getting the values from the input fields using `document.getElementById()` and converting them to numbers using `parseFloat()` or `parseInt()`. Then it checks if any of the values are invalid or empty using `isNaN()`. If invalid, it displays a message asking for valid input.
+
+Next, it verifies whether the loan amount is greater than zero, the interest rate is not negative, and the number of months is greater than zero. If any values are incorrect, an error message is displayed.
+
+If all inputs are valid, the function calculates the monthly interest rate by dividing the interest rate by 100 and then by 12 to get the monthly value. Using the interest rate, loan amount, and repayment period, it calculates the estimated monthly payment using a standard loan calculation formula. 
+
+The result is then displayed by updating the content of the element with the ID `payment`, using the `.innerHTML` property. The value is rounded to two decimal places using `.toFixed(2)`.
+
+The `resetForm()` function is used to reset the input fields to their default values. It sets the loan amount to 10,000, the interest rate to 10%, and the repayment period to 12 months. Additionally, it resets the payment display to show a value of $0.00.
+
+Finally, the code includes an event listener using `document.addEventListener()`. It ensures that the `calculateLoan()` function runs automatically when the webpage loads, displaying the initial loan calculation using the default values.
